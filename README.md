@@ -4,8 +4,17 @@ Minimal MapLibre app to visualize `nearestPointOnLine` behavior against a polygo
 
 ## Run
 
+Install nvm (skip if `command -v nvm` prints something):
+
 ```bash
-nvm install      # reads .nvmrc (Node 24)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+exec $SHELL          # reload so `nvm` is on PATH
+```
+
+Then, from the repo root:
+
+```bash
+nvm install          # reads .nvmrc (Node 24)
 nvm use
 npm install
 npm start
@@ -13,8 +22,11 @@ npm start
 
 Open http://localhost:4200 and move the mouse over the map.
 
-> No nvm yet? `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash`, then reopen the shell.
-> On fish, use [nvm.fish](https://github.com/jorgebucaran/nvm.fish) or `fnm`: `fnm use --install-if-missing 24`.
+> nvm is a bash/zsh function and does nothing under fish. On fish, use [fnm](https://github.com/Schniz/fnm) instead — it reads the same `.nvmrc`:
+> ```fish
+> curl -fsSL https://fnm.vercel.app/install | bash
+> fnm use --install-if-missing
+> ```
 
 ## Colors
 
